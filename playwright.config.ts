@@ -1,8 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import dotenv from 'dotenv';
-import path from 'path';
-
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+import { environmentConfig } from './config/environment';
 
 /**
  * Read environment variables from file.
@@ -31,7 +28,7 @@ export default defineConfig({
   use: {
     headless: false,
     viewport: null,
-    baseURL: process.env.BASE_URL,
+    baseURL: environmentConfig.baseURL,
     launchOptions: {
       args: ['--start-maximized'],
     },
@@ -58,7 +55,7 @@ export default defineConfig({
         storageState: 'playwright/.auth/user.json',
         viewport: null,
         launchOptions: {
-          slowMo: 500,
+          // slowMo: 500,
           args: ['--start-maximized'],
         },
       },

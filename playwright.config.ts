@@ -27,7 +27,6 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false,
-    viewport: null,
     baseURL: environmentConfig.baseURL,
     launchOptions: {
       args: ['--start-maximized'],
@@ -50,10 +49,12 @@ export default defineConfig({
 
     {
       name: 'chromium',
+      dependencies: ['setup'],
       testIgnore: /auth\.setup\.spec\.ts/,
+
       use: {
+        ...devices['Desktop Chrome'],
         storageState: 'playwright/.auth/user.json',
-        viewport: null,
         launchOptions: {
           // slowMo: 500,
           args: ['--start-maximized'],

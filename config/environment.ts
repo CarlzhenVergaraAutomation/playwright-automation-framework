@@ -6,14 +6,15 @@ dotenv.config({
 });
 
 export const environments = {
+  //$env:TEST_ENV="local"
   local: {
     baseURL: 'https://www.saucedemo.com',
   },
-
+  //$env:TEST_ENV="qa"
   qa: {
     baseURL: 'https://www.saucedemo.com',
   },
-
+  //$env:TEST_ENV="staging"
   staging: {
     baseURL: 'https://www.saucedemo.com',
   },

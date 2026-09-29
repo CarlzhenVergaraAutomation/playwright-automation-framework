@@ -10,6 +10,7 @@ test.describe('E2E Purchase Flow', () => {
   //   // await page.waitForTimeout(3000);
 });
 test('Complete full user journey from login to checkout', async ({
+  // page,
   loginPage,
   productPage,
   cartPage,
@@ -60,6 +61,7 @@ test('Complete full user journey from login to checkout', async ({
     );
   }
   await checkoutOverviewPage.finishCheckout();
+
   await checkoutCompletePage.verifyCheckoutComplete(
     checkoutCompleteDetails.checkImage,
     checkoutCompleteDetails.thankyouMessage,

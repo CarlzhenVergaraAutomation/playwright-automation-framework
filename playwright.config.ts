@@ -26,7 +26,7 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
     baseURL: environmentConfig.baseURL,
     launchOptions: {
       args: ['--start-maximized'],
@@ -91,6 +91,10 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+    {
+      name: 'api',
+      testMatch: /api\.spec\.ts/,
+    },
   ],
 
   /* Run your local dev server before starting the tests */

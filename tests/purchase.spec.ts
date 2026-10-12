@@ -2,7 +2,7 @@ import { test } from '../fixtures/test.fixture';
 import { productItems } from '../test-data/productItems';
 import { users } from '../test-data/users';
 import { checkoutCompleteDetails } from '../test-data/checkoutCompleteDetails';
-import { checkoutInformation } from '../test-data/checkout';
+import { checkoutInformationData } from '../test-data/checkout';
 
 test.describe('E2E Purchase Flow', () => {
   // Runs after every test in this file finishes, right before browser cleanup
@@ -47,7 +47,7 @@ test('Complete full user journey from login to checkout', async ({
   // Step 4: Proceed to Checkout
   await cartPage.proceedToCheckout();
 
-  await checkoutPage.enterCheckoutInformation(checkoutInformation);
+  await checkoutPage.enterCheckoutInformation(checkoutInformationData);
   await checkoutPage.continueToOverview();
 
   await checkoutOverviewPage.verifyCheckoutOverview();

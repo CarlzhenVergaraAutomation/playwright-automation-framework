@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { CheckoutInformation } from '../types/checkout';
+import { CheckoutInformationType } from '../types/checkout';
 
 export class CheckoutPage {
   private firstnameInput: Locator;
@@ -22,7 +22,7 @@ export class CheckoutPage {
     this.cancelButton = this.page.getByRole('button', { name: 'Cancel' });
   }
 
-  async enterCheckoutInformation(checkoutinformation: CheckoutInformation) {
+  async enterCheckoutInformation(checkoutinformation: CheckoutInformationType) {
     await this.firstnameInput.fill(checkoutinformation.firstname);
     await this.lastnameInput.fill(checkoutinformation.lastname);
     await this.postalCodeInput.fill(checkoutinformation.postal);

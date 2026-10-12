@@ -91,6 +91,7 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+    //this setup is for API project only
     {
       name: 'api',
       testMatch: /api\.spec\.ts/,
